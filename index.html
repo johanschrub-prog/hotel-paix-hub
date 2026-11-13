@@ -3,90 +3,110 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Hôtel de la Paix - Applications</title>
 
 <style>
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body{
-    font-family:Arial,sans-serif;
-    background:#f4f6f9;
-    min-height:100vh;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: #f8f9fa;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 header{
-    background:linear-gradient(135deg,#1976d2,#0d47a1);
-    color:white;
-    text-align:center;
-    padding:25px 15px;
-    box-shadow:0 2px 10px rgba(0,0,0,0.2);
+    background: linear-gradient(135deg, #1976d2, #0d47a1);
+    color: white;
+    text-align: center;
+    padding: 35px 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 header h1{
-    font-size:28px;
-    margin-bottom:5px;
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    letter-spacing: -0.5px;
 }
 
 header p{
-    opacity:0.9;
+    opacity: 0.9;
+    font-size: 15px;
+    font-weight: 400;
 }
 
 .grid{
-    display:grid;
-    grid-template-columns:repeat(2, 1fr);
-    gap:15px;
-    padding:15px;
-    max-width:900px;
-    margin:auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    padding: 24px 16px;
+    max-width: 800px;
+    margin: auto;
+    width: 100%;
+    flex: 1;
 }
-@media (min-width: 768px){
+
+@media (min-width: 600px){
     .grid{
-        grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        padding: 30px 20px;
     }
 }
 
 .carte{
-    background:white;
-    border-radius:20px;
-    padding:25px 15px;
-    text-align:center;
-    cursor:pointer;
-    transition:0.25s;
-    box-shadow:0 2px 8px rgba(0,0,0,0.15);
+    background: white;
+    border-radius: 14px;
+    padding: 24px 16px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    border: 1px solid #e9ecef;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .carte:hover{
-    transform:translateY(-5px);
-    box-shadow:0 6px 15px rgba(0,0,0,0.2);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    border-color: #cbd5e1;
 }
 
 .icone{
-    font-size:50px;
-    margin-bottom:15px;
+    font-size: 40px;
+    margin-bottom: 12px;
 }
 
 .titre{
-    font-size:18px;
-    font-weight:bold;
-    color:#333;
+    font-size: 16px;
+    font-weight: 600;
+    color: #212529;
+    margin-bottom: 4px;
 }
 
 .description{
-    margin-top:10px;
-    color:#666;
-    font-size:14px;
+    color: #6c757d;
+    font-size: 13px;
+    line-height: 1.3;
 }
 
 footer{
-    text-align:center;
-    padding:20px;
-    color:#777;
-    font-size:13px;
+    text-align: center;
+    padding: 20px;
+    color: #adb5bd;
+    font-size: 13px;
+    border-top: 1px solid #eee;
+    background: #fff;
 }
 </style>
 </head>
@@ -100,61 +120,22 @@ footer{
 
 <div class="grid">
     
-       <div class="carte" onclick="ouvrirApp('https://johanschrub-prog.github.io/stock-central/')">
+    <div class="carte" onclick="ouvrirApp('https://johanschrub-prog.github.io/stock-central/')">
         <div class="icone">🏠</div>
         <div class="titre">Stock</div>
-        <div class="description">
-           STOCK CAVE
-        </div>
+        <div class="description">Stock Central</div>
     </div>
 
-    <div class="carte" onclick="ouvrirApp('https://johanschrub-prog.github.io/boutique-hdp/')">
-        <div class="icone">🛍️</div>
-        <div class="titre">Boutique</div>
-        <div class="description">
-            Remontée des produits boutique
-        </div>
-    </div>
-
-    <div class="carte" onclick="ouvrirApp('https://johanschrub-prog.github.io/stock-economat/')">
-        <div class="icone">🍷</div>
-        <div class="titre">Remontée de Cave HDLP</div>
-        <div class="description">
-            Gestion des remontées de Cave HDLP
-        </div>
-    </div>
-
-        <div class="carte" onclick="ouvrirApp('https://johanschrub-prog.github.io/stock-economatrclp/')">
-        <div class="icone">🍷</div>
-        <div class="titre">Remontée de Cave RCLP</div>
-        <div class="description">
-            Gestion des remontées de Cave RCLP
-        </div>
-    </div>
-
-
-   <div class="carte" onclick="ouvrirApp('https://johanschrub-prog.github.io/balourdet/')">
+    <div class="carte" onclick="ouvrirApp('https://johanschrub-prog.github.io/balourdet/')">
         <div class="icone">🛒</div>
         <div class="titre">Commandes HDLP</div>
-        <div class="description">
-            Passation des commandes HOTEL
-        </div>
-    </div>
-    
-    <div class="carte" onclick="ouvrirApp('https://johanschrub-prog.github.io/commande-rclp/')">
-        <div class="icone">🛒</div>
-        <div class="titre">Commandes RCLP</div>
-        <div class="description">
-            Passation des commandes RESTAURANT
-        </div>
+        <div class="description">Commandes Hôtel</div>
     </div>
 
-  <div class="carte" onclick="ouvrirApp('https://johanschrub-prog.github.io/inventaire-hdlp/')">
+    <div class="carte" onclick="ouvrirApp('https://johanschrub-prog.github.io/inventaire-hdlp/')">
         <div class="icone">📋</div>
         <div class="titre">Inventaire</div>
-        <div class="description">
-            Inventaires et contrôles
-        </div>
+        <div class="description">Inventaires et contrôles</div>
     </div>
 
 </div>
